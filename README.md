@@ -3,8 +3,10 @@
 ---------
 
 This will be a restraunt reservation app without registration.
+* Create `Reservation` and `Customer` models.
 *  You can create your own models and controllers.
-*  `after_create` you will take first 2 and last 2 characters and add 3 random number of `full_name` and with these create new string with `full_name` variable which is `reservation_id`.
-*   `after_create` you will send email new `reservation_id` to your `customer`.
-*  `after_save` you need to delete spaces in your  `full_name` string
+*  Make a relationship between `Reservation` and `Customer` models.
+*  `before_create` you must create random string and you must set `reservation_code`to this attribute on Reservation model.
+*  `after_create` you will send email new `reservation_code` to your `customer`.
+*  `before_validation` you need to delete spaces in your `full_name` string on Customer model.
 *   You can only save orders except sundays.
